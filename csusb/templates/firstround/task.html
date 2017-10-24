@@ -1,0 +1,51 @@
+{% extends "game-layout.html" %}
+
+{% block title %}CSUSB Survivor &ndash; First Round{% endblock %}
+
+{% block description %}
+<h2 id="round-title">Round One: Lost On The Moon</h2>
+<p>Your spacecraft has crash-landed on the dark side of the moon. You are scheduled to
+rendevous with the mother ship 200 miles away on the lighted side of the moon. The crash
+has ruined the ship and destroyed all except 15 items of equipment. Your crew's survival
+on the moon depends on reaching the mothership, so you must choose the most critical
+items available to take on the 200-mile trip.</p>
+<p id="instructions" class="bg-info">Sort the items. The most important item should be at the top of
+    the list, the least important item should be at the bottom of the list.</p>
+<p id="game-started" class="bg-info" style="display:none">Game has started - your answers will be submitted
+automatically once you click Finish button!</p>
+<br>
+<button id ="start" type="button" class="btn btn-default btn-lg active">Start Round</button>
+<button id ="finish" type="button" class="btn btn-default btn-lg active">Finish</button>
+
+
+{% endblock %}
+
+{% block workspace %}
+<p class="lead text-center">Drag and drop items to sort them. Higher items indicate increased importance.</p>
+<ul id="equipment" class="sortable" style="list-style-type:none;">
+    <li id="matches" class="btn btn-default btn-sm btn-block">Box of matches</li>
+    <li id="food" class="btn btn-default btn-sm btn-block">Food concentrate</li>
+    <li id="rope" class="btn btn-default btn-sm btn-block">Fifty feet of nylon rope</li>
+    <li id="silk" class="btn btn-default btn-sm btn-block">Parachute silk</li>
+    <li id="heating-unit" class="btn btn-default btn-sm btn-block">Solar-powered portable heating unit</li>
+    <li id="pistols" class="btn btn-default btn-sm btn-block">Two .45 caliber pistols</li>
+    <li id="milk" class="btn btn-default btn-sm btn-block">One case of dehydrated milk</li>
+    <li id="oxygen" class="btn btn-default btn-sm btn-block">Two 100-pound tanks of oxygen</li>
+    <li id="map" class="btn btn-default btn-sm btn-block">Stellar map</li>
+    <li id="raft" class="btn btn-default btn-sm btn-block">Self-inflating life raft</li>
+    <li id="compass" class="btn btn-default btn-sm btn-block">Magnetic compass</li>
+    <li id="water" class="btn btn-default btn-sm btn-block">Five gallons of water</li>
+    <li id="flares" class="btn btn-default btn-sm btn-block">Signal flares</li>
+    <li id="firstaid" class="btn btn-default btn-sm btn-block">First-aid kit with hypodermic syringes</li>
+    <li id="transmitter" class="btn btn-default btn-sm btn-block">Solar-powered FM transmitter/receiver</li>
+</ul>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+ <!-- <script type="text/javascript" src="{{ url_for('static',
+        filename='js/game/tock.min.js') }}"></script>-->
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static',
+        filename='js/game/firstround.js') }}"></script>
+{% endblock %}

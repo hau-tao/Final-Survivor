@@ -1,0 +1,74 @@
+[
+    {
+        "round": 1,
+        "version": 1,
+        "comments": [
+            "her score wasn't the worst but she gave some bad answers",
+            "Our team will be stronger without her",
+            "don't think that girl will be good at strategizing"
+        ]
+    },
+    {
+        "round": 1,
+        "version": 2,
+        "comments": [
+            "her score wasn't the worst but she gave some bad answers",
+            "Our team will be stronger without her",
+            "don't think that girl will be good at strategizing"
+        ]
+    },
+    {
+        "round": 1,
+        "version": 3,
+        "comments": [
+            "his score wasn't the worst but he gave some bad answers",
+            "Our team will be stronger without him",
+            "don't think that player will be good at strategizing"
+        ]
+    },
+    {
+        "round": 1,
+        "version": 4,
+        "comments": [
+            "his score wasn't the worst but he gave some bad answers",
+            "Our team will be stronger without him",
+            "don't think that player will be good at strategizing"
+        ]
+    },
+    {
+        "round": 2,
+        "version": 1,
+        "comments": [
+            "we need to keep our team as strong as possible",
+            "I just didn't like her answers",
+            "she'd probably be better at An Expedition TO THE SPA"
+        ]
+    },
+    {
+        "round": 2,
+        "version": 2,
+        "comments": [
+            "we need to keep our team as strong as possible",
+            "I just didn't like her answers",
+            "she'd probably be better at An Expedition TO THE SPA"
+        ]
+    },
+    {
+        "round": 2,
+        "version": 3,
+        "comments": [
+            "we need to keep our team as strong as possible",
+            "I just didn't like her answers",
+            "she'd probably be better at An Expedition OUT OF HERE"
+        ]
+    },
+    {
+        "round": 2,
+        "version": 4,
+        "comments": [
+            "we need to keep our team as strong as possible",
+            "I just didn't like her answers",
+            "she'd probably be better at An Expedition OUT OF HERE"
+        ]
+    }
+]

@@ -1,0 +1,67 @@
+{% extends "game-layout.html" %}
+
+{% block title %}CSUSB Survivor &ndash; Second Round Scores{% endblock %}
+
+{% block description %}
+<h2 id="round-title">Round Two: Expedition Through the Rainforest</h2>
+<p>You and your friends have decided to take an expedition through the rainforest in Costa
+Rica.</p>
+<h3>Scoring is comprised of four components: </h3>
+		<p><strong>Originality: </strong>We compare each of your responses to the responses from a group of 50 students
+		at CSUSB. Responses that were given by only 5% of the students are unusual (1 point), responses that
+		were given by only 1% of the students are unique (2 points). </p>
+		<p><strong>Fluency: </strong>We add up the all the number of responses you gave for each item.</p>
+		<p><strong>Flexibility: </strong>We count the number of different categories your answers fall into ("weapon" and
+		"hit sister" are from the same general idea of weapon).</p>
+		<p><strong>Elaboration: </strong>We look for the amount of detail you gave (for example: "a doorstop" = 0 points,
+		whereas "a doorstop to prevent a door slamming shut in a strong wind" = 2 points-one for the
+		explanation of door slamming, two for further detail about the wind).</p>
+
+		<style>
+		#myProgress {
+		  position: relative;
+		  width: 100%;
+		  height: 30px;
+		  background-color: #ddd;
+		}
+
+		#myBar {
+		  position: absolute;
+		  width: 2%;
+		  height: 100%;
+		  background-color: #4CAF50;
+		}
+
+		#label {
+		  text-align: center;
+		  line-height: 30px;
+		  color: white;
+		}
+		</style>
+		<body>
+
+		<div id="myProgress2" style="display:none;">
+		<h1>Processing scores...</h1>
+
+		<div id="myProgress">
+		  <div id="myBar">
+		    <div id="label">2%</div>
+		  </div>
+		</div>
+		</div>
+{% endblock %}
+
+{% block workspace %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+  <script type="text/javascript" src="{{ url_for('static',
+        filename='js/game/tock.min.js') }}"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static',
+        filename='js/game/firstround.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',
+              filename='js/game/processing2.js') }}"></script>
+{% endblock %}

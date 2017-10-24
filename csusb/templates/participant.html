@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSUSB Survivor &ndash; Participant Registration{% endblock %}
+
+{% block page_content %}
+<h2>Start Survivor</h2>
+<p class="lead">You will be part of a five person team consisting of individuals playing
+at computers across the university. You will receive some general
+information about each of your team members, as well as their picture.
+Each of you will complete two tasks that will serve as elimination
+rounds. After each round, you will receive your score, your rank, and
+the rank of each of your team members. You will then vote on who you
+feel should be eliminated from your team and give a short explanation
+for your vote.</p>
+
+<p class="lead bg-info">First, you need to submit some information about yourself.</p>
+
+{{ wtf.quick_form(form) }}
+
+{% endblock %}

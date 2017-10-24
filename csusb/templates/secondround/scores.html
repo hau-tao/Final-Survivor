@@ -1,0 +1,39 @@
+{% extends "game-layout.html" %}
+
+{% block title %}CSUSB Survivor &ndash; Second Round Scores{% endblock %}
+
+{% block description %}
+<h2 id="round-title">Scores over 25 are good</h2>
+<p>
+<ul style="list-style-type: none;">
+	{% for ranking in rankings %}
+	<li style="font-size: 18px;">#{{ ranking[2] }} {{ranking[0]}} ({{ranking[1]}})</li>
+	{% endfor %}
+</ul>
+</p>
+
+<p><strong>Reminder: If you get eliminated during the first two rounds of CSUSB Survivor, you will complete the remaining strategy tasks alone and without the chance to win lottery tickets.</strong></p>
+
+<a href="{{ url_for('main.second_elimination')}}" class="btn btn-default btn-lg active center-block" role="button">Proceed to Elimination</a>
+{% endblock %}
+
+{% block workspace %}
+		<h3>A selection of answers from each of your team members:</h3>
+		<p>Higher scores indicate higher levels of creativity</p>
+		<h4>Things you can do with a parachute cord:</h4>
+		<li>Hang flashlight up in a tree to use as a lamp at night</li>
+		<li>securing splints for First Aid</li>
+		<li>drag heavy objects</li>
+		<h4>Things you can do with duct tape:</h4>
+		<li>use as climbing grip when rapelling down mountains</li>
+		<li>wrap up pant legs and sleeves to keep out bugs</li>
+		<li>fix boots</li>
+		<h4>Things you can do with a plastic tarp:</h4>
+		<li>collect rain water using tarp and use fire starter to make a fire to boil the water so you can drink it</li>
+		<li>rain poncho to keep you dry</li>
+		<li>hammock</li>
+		<h4>Things you can do with metal skewers:</h4>
+		<li>use as tent spikes for a tent made using the nylon rope and clothing</li>
+		<li>mark path so you don't get lost</li>
+		<li>roast hotdogs over fire</li>
+{% endblock %}

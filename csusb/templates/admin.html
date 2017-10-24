@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="container">
+    <a href="{{url_for('main.to_csv')}}" class="btn btn-primary">Download CSV</a>
+
+    <a href="{{url_for('main.change_fairness', modify='001')}}" class="btn
+    {% if ('override_fairness' in session) and ('override_relevance' in session)%}
+        {% if (session['override_fairness'] == 'unfair') and (session['override_relevance'] == 'relevant')%}
+            btn-primary
+        {% else %}
+            btn-default
+        {% endif%}
+    {% else %}
+        btn-default
+    {% endif %}">Only Relevant Unfair</a>
+
+    <a href="{{url_for('main.change_fairness', modify='002')}}" class="btn
+    {% if ('override_fairness' in session) and ('override_relevance' in session)%}
+        {% if (session['override_fairness'] == 'fair') and (session['override_relevance'] == 'relevant')%}
+            btn-primary
+        {% else %}
+            btn-default
+        {% endif%}
+    {% else %}
+        btn-default
+    {% endif %}">Only Relevant Fair</a>
+
+    <a href="{{url_for('main.change_fairness', modify='003')}}" class="btn
+    {% if ('override_fairness' in session) and ('override_relevance' in session)%}
+        {% if (session['override_fairness'] == 'unfair') and (session['override_relevance'] == 'irrelevant')%}
+            btn-primary
+        {% else %}
+            btn-default
+        {% endif%}
+    {% else %}
+        btn-default
+    {% endif %}">Only Irrelevant Unfair</a>
+
+    <a href="{{url_for('main.change_fairness', modify='004')}}" class="btn
+    {% if ('override_fairness' in session) and ('override_relevance' in session)%}
+        {% if (session['override_fairness'] == 'fair') and (session['override_relevance'] == 'irrelevant')%}
+            btn-primary
+        {% else %}
+            btn-default
+        {% endif%}
+    {% else %}
+        btn-default
+    {% endif %}">Only Irrelevant Fair</a>
+
+    <a href="{{url_for('main.change_fairness', modify='clear')}}" class="btn {% if ('override_fairness' in session) and ('override_relevance' in session)%}btn-default{% else %} btn-primary {% endif %}">Random Experience</a>
+    <a href="{{url_for('main.delete_all')}}" class="btn btn-danger">Delete All</a>
+    <br>
+    <br>
+
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>Actions</th>
+        <th>id</th>
+        <th>timestamp</th>
+        <th>fairness</th>
+        <th>relevance</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>age</th>
+        <th>major</th>
+        <th>college</th>
+        <th>academic year</th>
+        <th>eliminated</th>
+        <th>first round answers</th>
+        <th>second round answers</th>
+        <th>first round vote</th>
+        <th>second round vote</th>
+    </tr>
+    {% for participant in participants %}
+    <tr>
+        <td><a href="{{ url_for('main.delete_all', id=participant.id)}}">delete</a></td>
+        <td>{{participant.id}}</td>
+        <td>{{participant.timestamp}}</td>
+        <td>{{participant.fairness}}</td>
+        <td>{{participant.relevance}}</td>
+        <td>{{participant.first_name}}</td>
+        <td>{{participant.last_name}}</td>
+        <td>{{participant.age}}</td>
+        <td>{{participant.major}}</td>
+        <td>{{participant.college_name}}</td>
+        <td>{{participant.academic_year}}</td>
+        <td>{{participant.eliminated}}</td>
+        <td>{{participant.first_round_answers}}</td>
+        <td>{{participant.second_round_answers}}</td>
+        <td>{{participant.first_elimination_vote}}</td>
+        <td>{{participant.second_elimination_vote}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

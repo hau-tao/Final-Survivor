@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<p class="lead">Here are the other members of your team. You will have a few minutes to look
+over the info.</p>
+
+<table class="table">
+    <h3>Your team:</h3>
+    <thead></thead>
+    <tbody>
+
+        {% for player in players %}
+        <th>{{ player.name }}
+          <img src="/static/{{ player.photo_url }}" class="img-rounded" height="75px" width="75px">
+            <small> </small>
+            <small></small>
+        </th>
+        {% endfor %}
+
+    </tbody>
+  </table>
+
+<p class="lead"><strong>When you are finished reviewing your team, start playing.</strong></p>
+<button class="btn btn-default btn-lg active center-block">Play Survivor</button>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+$(function() {
+    $("button").click(function() {
+        $(this).addClass("disabled");
+        setTimeout(function() {
+           window.location.href = "/firstround"
+         }, 1);
+    });
+});
+</script>
+{% endblock %}

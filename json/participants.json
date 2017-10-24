@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Erica",
+        "image": "img/erica.jpg",
+        "eliminated": false
+    },
+    {
+        "name": "Joe",
+        "image": "img/joe.jpg",
+        "eliminated": false
+    },
+    {
+        "name": "Kevin",
+        "image": "img/kevin.jpg",
+        "eliminated": false
+    },
+    {
+        "name": "Terry",
+        "image": "img/terry.jpg",
+        "eliminated": false
+    }
+]

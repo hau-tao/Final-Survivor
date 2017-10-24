@@ -1,0 +1,154 @@
+{% extends "game-layout.html" %}
+
+{% block title %}CSUSB Survivor &ndash; First Round Scores{% endblock %}
+
+{% block description %}
+<h2 id="round-title">Here's how your team did</h2>
+<p>
+<ul style="list-style-type: none;">
+	{% for ranking in rankings %}
+	<li style="font-size: 18px;">#{{ ranking[2] }} {{ranking[0]}} ({{ranking[1]}})</li>
+	{% endfor %}
+</ul>
+</p>
+
+<a href="{{url_for('main.first_elimination')}}" class="btn btn-default btn-lg active center-block" role="button">Proceed to Elimination</a>
+{% endblock %}
+
+{% block workspace %}
+	<table class="table table-striped table-bordered" id="team-answers">
+	<thead>
+		<tr><th colspan="6">Answers From Your Team Members</th></tr>
+		<tr>
+			<th>Items</th>
+			<th>{{ (session['participant_id'] | participant).first_name }}</th>
+			<th>Laurie</th>
+			<th>Anne</th>
+			<th>Hannah</th>
+			<th>Lupe</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Box of matches</td>
+			<td>{{ session['order']['matches'] }}</td>
+			<td>15</td>
+			<td>15</td>
+			<td>3</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td>Food concentrate</td>
+			<td>{{ session['order']['food'] }}</td>
+			<td>3</td>
+			<td>4</td>
+			<td>4</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Fifty feet of nylon rope</td>
+			<td>{{ session['order']['rope'] }}</td>
+			<td>4</td>
+			<td>6</td>
+			<td>7</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Parachute silk</td>
+			<td>{{ session['order']['silk'] }}</td>
+			<td>11</td>
+			<td>8</td>
+			<td>8</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>Solar-powered portable heating unit</td>
+			<td>{{ session['order']['heating-unit'] }}</td>
+			<td>10</td>
+			<td>13</td>
+			<td>12</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Two .45 caliber pistols</td>
+			<td>{{ session['order']['pistols'] }}</td>
+			<td>12</td>
+			<td>11</td>
+			<td>13</td>
+			<td>13</td>
+		</tr>
+		<tr>
+			<td>One case of dehydrated milk</td>
+			<td>{{ session['order']['milk'] }}</td>
+			<td>9</td>
+			<td>12</td>
+			<td>14</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>Two 100-pound tanks of oxygen</td>
+			<td>{{ session['order']['oxygen'] }}</td>
+			<td>1</td>
+			<td>1</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Stellar map</td>
+			<td>{{ session['order']['map'] }}</td>
+			<td>8</td>
+			<td>3</td>
+			<td>5</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td>Self-inflating life raft</td>
+			<td>{{ session['order']['raft'] }}</td>
+			<td>13</td>
+			<td>9</td>
+			<td>10</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>Magnetic compass</td>
+			<td>{{ session['order']['compass'] }}</td>
+			<td>14</td>
+			<td>14</td>
+			<td>15</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>Five gallons of water</td>
+			<td>{{ session['order']['water'] }}</td>
+			<td>2</td>
+			<td>2</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Signal flares</td>
+			<td>{{ session['order']['flares'] }}</td>
+			<td>5</td>
+			<td>10</td>
+			<td>9</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>First aid kit with hypodermic syringes</td>
+			<td>{{ session['order']['firstaid'] }}</td>
+			<td>6</td>
+			<td>7</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>Solar-powered FM transmitter/receiver</td>
+			<td>{{ session['order']['transmitter'] }}</td>
+			<td>7</td>
+			<td>5</td>
+			<td>6</td>
+			<td>11</td>
+		</tr>
+	</tbody>
+	</table>
+{% endblock %}
