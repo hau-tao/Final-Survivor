@@ -34,7 +34,9 @@ Version 4: Gender-Irrelevant Fair
 
 In all versions, the participant is eliminated during the second round.
 
-### Notes
+### Change log
+1. Camera is working on Firefox Ubuntu 17.04
+2. Ignore the long timer button
 
-ScriptCam works in the Chrome browser on Linux and Solaris systems.
 # CSUSBAPP
+
