@@ -34,6 +34,10 @@ Version 4: Gender-Irrelevant Fair
 
 In all versions, the participant is eliminated during the second round.
 
+### Note
+
+1.Copy csusb/main/forms.py to Final_CSUSB, and then run command "python manage.py runserver" when running on the local machine (tested for Ubuntu 17.04)
+2. Deploy to Heroku, need to remove forms.py
 ### Change log
 1. Camera is working on Firefox Ubuntu 17.04
 2. Ignore the long timer button
